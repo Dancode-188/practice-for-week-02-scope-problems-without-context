@@ -44,6 +44,15 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function curriedSum(numArgs) {
   // Your code here
+  let numbers = [];
+  function _curriedSum(num) {
+    numbers.push(num);
+    if (numbers.length === numArgs) {
+      return numbers.reduce((acc, el) => acc + el);
+    }
+    return _curriedSum;
+  }
+  return _curriedSum;
 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
